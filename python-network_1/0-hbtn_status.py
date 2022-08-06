@@ -1,19 +1,12 @@
 #!/usr/bin/python3
-""" module uses another module to request to make request """
+"""get intranet status and display it using urllib"""
+
 import urllib.request
 
-
-"""making request to provided url"""
 if __name__ == "__main__":
-    """making request to provided url"""
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
-        html = response.read()
-        print('Body response:')
-        print("\t- type: {}".format(type(html)))
-        print("\t- content: {}".format(html))
-        """ the method i used is easy way for string manipulation 
-            to use a method that make use of the concept
-            print out html.decode('utf-8') with string formatting
-        """
-        temp = str(html)
-        print("\t- utf8 content: {}".format(temp[2:-1]))
+    with urllib.request.urlopen("https://intranet.hbtn.io/status") as res:
+        body = res.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(body)))
+        print("\t- content: {}".format(body))
+        print("\t- utf8 content: {}".format(body.decode("utf-8")))
