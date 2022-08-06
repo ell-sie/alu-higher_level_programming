@@ -1,14 +1,11 @@
 #!/usr/bin/python3
-""" send a request and
-getting a particular header
-"""
-import requests
-import sys
+"""Takes in a URL, sends a request to the URL and displays the value of the
+X-Request-Id variable found in the header of the response"""
 
-
-# url = 'https://intranet.hbtn.io'
 
 if __name__ == "__main__":
+    import requests
+    import sys
+
     r = requests.get(sys.argv[1])
-    dict_got = r.headers
-    print(dict_got.get('X-Request-Id'))
+    print(r.headers.get('X-Request-Id'))
