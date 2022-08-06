@@ -1,4 +1,4 @@
---  lists all genre of show Dexter
+-- lists all genre of show Dexter
 SELECT tv_genres.name
 FROM tv_genres
 JOIN tv_show_genres 
